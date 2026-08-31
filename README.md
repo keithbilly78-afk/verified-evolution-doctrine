@@ -8,8 +8,10 @@ This repository contains reference implementations and validation protocols for 
 
 ## Governance Doctrine
 
-```text
-[Observe] ➔ [Understand] ➔ [Verify] ➔ [Authorize] ➔ [Act] ➔ [Confirm] ➔ [Evolve] │ (Return to Rest State)
+```
+[Observe] ➔ [Understand] ➔ [Verify] ➔ [Authorize] ➔ [Act] ➔ [Confirm] ➔ [Evolve]
+                                                                      │
+                                                            (Return to Rest State)
 ```
 
 **Bidirectional Truth:**
@@ -64,7 +66,7 @@ Domain-specific controls (cryptographic proof, uncertainty localization, physica
 
 ⚠️ This formula is a **research hypothesis**, not an established law. It is configurable by domain.
 
-```text
+```
 SpendBudget = B₀ + Φ × f(C, U, Aₑ, Dₒ)
 ```
 
@@ -83,7 +85,7 @@ SpendBudget = B₀ + Φ × f(C, U, Aₑ, Dₒ)
 
 ## 4-Stage Verification Vice-Versa Protocol (4VP)
 
-Enhanced reconciliation requirement (stronger than `invariant_breached` check):
+Enhanced reconciliation requirement (stronger than invariant_breached check):
 
 **Stage 1: Backward Challenge**
 - ✓ Independently established deficiency or opportunity documented
@@ -97,7 +99,7 @@ Enhanced reconciliation requirement (stronger than `invariant_breached` check):
 
 **Stage 3: Forward Promise Verification**
 - ✓ Measured improvement materializes
-- ✓ Meets or exceeds `minimum_expected_gain` threshold
+- ✓ Meets or exceeds minimum_expected_gain threshold
 - ✓ All protected dimensions within regression budget
 
 **Stage 4: Reconciliation Equality (Strengthened)**
@@ -195,27 +197,27 @@ A candidate does not necessarily need to execute all eight framework attack suit
 
 ## Repository Structure
 
-```text
+```
 verified-evolution-doctrine/
 ├── docs/
-│   ├── DOCTRINE_v2.1.md              # Complete standard specification
-│   ├── LIFECYCLE.md                   # 7-stage lifecycle detailed walkthrough
-│   ├── OPERATIONAL_LAWS.md            # 5 core constraints
-│   ├── RESOURCE_CALCULUS.md           # v2.1 formula with saturation & B₀
-│   ├── V_LAYERS.md                    # V1–V12 canonical definitions & controls
-│   └── 4VP_RECONCILIATION.md          # Strengthened 4-stage protocol
+│   ├── DOCTRINE_v2.1.md           # Complete standard specification
+│   ├── LIFECYCLE.md               # 7-stage lifecycle detailed walkthrough
+│   ├── OPERATIONAL_LAWS.md        # 5 core constraints
+│   ├── RESOURCE_CALCULUS.md       # v2.1 formula with saturation & B₀
+│   ├── V_LAYERS.md                # V1–V12 canonical definitions & controls
+│   └── 4VP_RECONCILIATION.md      # Strengthened 4-stage protocol
 ├── src/
-│   ├── sandbox_engine.py              # VerificationSandboxEngine (4VP enhanced)
-│   ├── drift_detection.py             # Long-horizon baseline anchoring
-│   ├── consequence_calculus.py        # Resource allocation (v2.1 formula)
-│   ├── intent_authority.py            # Intent (V4) vs. credentials separation
-│   ├── protection_budgets.py          # Multi-dimensional regression protection
-│   ├── correlation_analysis.py        # Cross-component fault correlation
-│   ├── evidence_tracker.py            # Freshness & decay management (V5)
+│   ├── sandbox_engine.py          # VerificationSandboxEngine (4VP enhanced)
+│   ├── drift_detection.py         # Long-horizon baseline anchoring
+│   ├── consequence_calculus.py    # Resource allocation (v2.1 formula)
+│   ├── intent_authority.py        # Intent (V4) vs. credentials separation
+│   ├── protection_budgets.py      # Multi-dimensional regression protection
+│   ├── correlation_analysis.py    # Cross-component fault correlation
+│   ├── evidence_tracker.py        # Freshness & decay management (V5)
 │   ├── controller_instrumentation.py  # Overhead measurement
-│   ├── v_layer_checks.py              # V1–V12 assurance contract validators
-│   ├── recovery_evolution_fsm.py      # State machine separation
-│   └── logging_systems.py             # Evolution decision log & rejection log
+│   ├── v_layer_checks.py          # V1–V12 assurance contract validators
+│   ├── recovery_evolution_fsm.py  # State machine separation
+│   └── logging_systems.py         # Evolution decision log & rejection log
 ├── tests/
 │   ├── test_falsification_1_drift.py
 │   ├── test_falsification_2_baseline.py
@@ -225,18 +227,18 @@ verified-evolution-doctrine/
 │   ├── test_falsification_6_stale_consensus.py
 │   ├── test_falsification_7_overhead.py
 │   ├── test_falsification_8_recovery_evolution.py
-│   ├── test_v_layers.py               # V1–V12 assurance contract validation
-│   ├── test_lifecycle.py              # 7-stage lifecycle verification
-│   ├── test_4vp.py                    # Enhanced 4VP reconciliation tests
-│   ├── test_logging.py                # Evolution decision log & rejection log
-│   └── conftest.py                    # Pytest fixtures
+│   ├── test_v_layers.py           # V1–V12 assurance contract validation
+│   ├── test_lifecycle.py          # 7-stage lifecycle verification
+│   ├── test_4vp.py                # Enhanced 4VP reconciliation tests
+│   ├── test_logging.py            # Evolution decision log & rejection log
+│   └── conftest.py                # Pytest fixtures
 ├── .github/
 │   └── workflows/
-│       └── ci.yml                     # GitHub Actions CI pipeline
-├── FALSIFICATION_PLAN.md              # 8 attack vectors & success criteria
-├── LOGGING_SPEC.md                    # Detailed logging format & examples
-├── LICENSE                            # Apache 2.0
-└── pyproject.toml                     # Python package config
+│       └── ci.yml                 # GitHub Actions CI pipeline
+├── FALSIFICATION_PLAN.md          # 8 attack vectors & success criteria
+├── LOGGING_SPEC.md                # Detailed logging format & examples
+├── LICENSE                        # Apache 2.0
+└── pyproject.toml                 # Python package config
 ```
 
 ---
@@ -296,7 +298,6 @@ All tests produce **quantitative rejection logs** for independent review.
 ## Quick Start
 
 ### Install
-
 ```bash
 git clone https://github.com/keithbilly78-afk/verified-evolution-doctrine
 cd verified-evolution-doctrine
@@ -304,25 +305,21 @@ pip install -e .
 ```
 
 ### Run All Tests
-
 ```bash
 pytest tests/ -v --tb=short
 ```
 
 ### Run Falsification Tests Only (Framework Validation)
-
 ```bash
 pytest tests/test_falsification_*.py -v
 ```
 
 ### Run V-Layer Validation
-
 ```bash
 pytest tests/test_v_layers.py -v
 ```
 
 ### Run with Coverage & Quantitative Logs
-
 ```bash
 pytest tests/ --cov=src --cov-report=html -v --log-cli-level=INFO
 ```
@@ -350,12 +347,12 @@ Long-horizon locked baseline prevents "boiling frog":
 
 ### 3. Resource Allocation (v2.1 Formula)
 
-```text
+```
 SpendBudget = B₀ + Φ × f(C, U, Aₑ, Dₒ)
 ```
 
-- `B₀` ensures minimum inspection even when C/U low
-- `f()` is bounded and saturating (no runaway computation)
+- B₀ ensures minimum inspection even when C/U low
+- f() is bounded and saturating (no runaway computation)
 - Configuration by domain (quantum vs. healthcare vs. AI)
 
 ### 4. V-Layer Assurance Stack
@@ -401,23 +398,23 @@ Strict separation:
 
 ## Documentation
 
-- `DOCTRINE_v2.1.md` — Complete standard specification
-- `V_LAYERS.md` — V1–V12 canonical definitions with domain-specific controls
-- `4VP_RECONCILIATION.md` — Strengthened 4-stage protocol
-- `RESOURCE_CALCULUS.md` — v2.1 formula with saturation & B₀
-- `FALSIFICATION_PLAN.md` — 8 attack vectors & success criteria
-- `LOGGING_SPEC.md` — Evolution decision log, rejection log, and inconclusive log formats
+- **[DOCTRINE_v2.1.md](docs/DOCTRINE_v2.1.md)** — Complete standard specification
+- **[V_LAYERS.md](docs/V_LAYERS.md)** — V1–V12 canonical definitions with domain-specific controls
+- **[4VP_RECONCILIATION.md](docs/4VP_RECONCILIATION.md)** — Strengthened 4-stage protocol
+- **[RESOURCE_CALCULUS.md](docs/RESOURCE_CALCULUS.md)** — v2.1 formula with saturation & B₀
+- **[FALSIFICATION_PLAN.md](FALSIFICATION_PLAN.md)** — 8 attack vectors & success criteria
+- **[LOGGING_SPEC.md](LOGGING_SPEC.md)** — Evolution decision log, rejection log, and inconclusive log formats
 
 ---
 
 ## Contributing
 
 This is an open research framework. Contributions should focus on:
-- Validating or falsifying architectural principles (submit falsification manifests)
-- Domain-specific adaptations (quantum, AI, healthcare, infrastructure)
-- Test coverage expansion for edge cases and cross-layer interactions
-- Independent peer review and analysis
-- Logging and decision audit improvements
+- **Validating or falsifying** architectural principles (submit falsification manifests)
+- **Domain-specific adaptations** (quantum, AI, healthcare, infrastructure)
+- **Test coverage expansion** for edge cases and cross-layer interactions
+- **Independent peer review** and analysis
+- **Logging and decision audit** improvements
 
 Submit research findings via issues or pull requests.
 
@@ -425,7 +422,7 @@ Submit research findings via issues or pull requests.
 
 ## Citation
 
-```text
+```
 Verified Evolution Doctrine v2.1 — Reference Implementation & Validation Framework
 Experimental Research Architecture
 https://github.com/keithbilly78-afk/verified-evolution-doctrine
@@ -435,7 +432,7 @@ https://github.com/keithbilly78-afk/verified-evolution-doctrine
 
 ## License
 
-Apache License 2.0 — See `LICENSE` file.
+Apache License 2.0 — See LICENSE file.
 
 ---
 
