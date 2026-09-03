@@ -88,7 +88,7 @@ def valid_deficiency_trace():
     return DeficiencyTrace(
         target_v_layer=5,
         metric_anomaly_id="latency_spike_001",
-        observed_value=0.15,  # 15% degradation
+        observed_value=0.15,
         boundary_constraint="p99_latency must stay under 100ms",
         evidence_age_hours=2.0,
         evidence_source="monitoring_system",
@@ -101,7 +101,7 @@ def valid_improvement_promise():
     """A valid improvement promise."""
     return ImprovementPromise(
         target_metric="p99_latency_ms",
-        minimum_expected_gain=12.0,  # Must improve by at least 12ms
+        minimum_expected_gain=12.0,
         max_reversibility_cost=5,
     )
 
@@ -126,7 +126,7 @@ def valid_protected_dimension_measurement():
     return ProtectedDimensionMeasurement(
         dimension_name="latency_p99",
         baseline_value=85.0,
-        measured_value=82.0,  # Slight improvement, no regression
+        measured_value=82.0,
         regression_budget=5.0,
         measurement_method="synthetic_benchmark",
         measurement_confidence=0.9,
